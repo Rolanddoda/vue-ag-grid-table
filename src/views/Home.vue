@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <AgGrid :options="agGridOptions" />
+    <AgGrid :options="options" />
   </Page>
 </template>
 
@@ -12,21 +12,31 @@ export default {
     AgGrid
   },
 
+  data: () => ({
+    rowData: null
+  }),
+
   computed: {
-    agGridOptions() {
+    options() {
       return {
         columnDefs: [
           { headerName: "Make", field: "make" },
           { headerName: "Model", field: "model" },
           { headerName: "Price", field: "price", type: "rightAligned" }
         ],
-        rowData: [
-          { make: "Toyota", model: "Celica", price: 35000 },
-          { make: "Ford", model: "Mondeo", price: 32000 },
-          { make: "Porsche", model: "Boxter", price: 72000 }
-        ]
+        rowData: this.rowData
       };
     }
+  },
+
+  created() {
+    fetch(
+      "https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/sample-data/smallRowData.json"
+    )
+      .then(result => result.json())
+      .then(rowData => {
+        this.rowData = rowData;
+      });
   }
 };
 </script>

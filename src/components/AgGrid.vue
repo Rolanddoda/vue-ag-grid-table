@@ -1,7 +1,8 @@
 <template>
   <AgGridVue
     class="ag-grid-vue ag-theme-alpine"
-    :grid-options="options"
+    :column-defs="options.columnDefs"
+    :row-data="options.rowData"
     @grid-ready="onGridReady"
     @first-data-rendered="firstDataRendered"
   ></AgGridVue>
@@ -45,19 +46,6 @@ export default {
 @import "~ag-grid-enterprise/dist/styles/ag-grid.css";
 @import "~ag-grid-enterprise/dist/styles/ag-theme-balham/sass/ag-theme-balham";
 @import "~ag-grid-enterprise/dist/styles/ag-theme-alpine/sass/ag-theme-alpine";
-
-/*.ag-theme-alpine {
-  @include ag-theme-alpine(
-    (
-      odd-row-background-color: blue,
-      row-border-color: red,
-      row-hover-color: yellow,
-      checkbox-checked-color: #2661ad,
-      range-selection-border-color: #ff00b1,
-      range-selection-background-color: #03305633
-    )
-  );
-}*/
 
 .ag-grid-vue {
   height: 100%;
