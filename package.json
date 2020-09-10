@@ -12,7 +12,7 @@
     "ag-grid-vue": "^24.0.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-property-decorator": "^9.0.0",
+    "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
