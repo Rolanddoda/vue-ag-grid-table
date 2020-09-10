@@ -44,8 +44,15 @@ export default {
 
 <style lang="scss">
 @import "~ag-grid-enterprise/dist/styles/ag-grid.css";
-@import "~ag-grid-enterprise/dist/styles/ag-theme-balham/sass/ag-theme-balham";
-@import "~ag-grid-enterprise/dist/styles/ag-theme-alpine/sass/ag-theme-alpine";
+@import "~ag-grid-enterprise/dist/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
+
+.ag-theme-alpine {
+  @include ag-theme-alpine(
+    (
+      odd-row-background-color: blue
+    )
+  );
+}
 
 .ag-grid-vue {
   height: 100%;
