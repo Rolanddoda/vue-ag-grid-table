@@ -43,13 +43,16 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~ag-grid-enterprise/dist/styles/ag-grid.css";
+@import "~ag-grid-enterprise/dist/styles/ag-grid.scss";
 @import "~ag-grid-enterprise/dist/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
+@import "~@/styles/colors";
 
 .ag-theme-alpine {
   @include ag-theme-alpine(
     (
-      odd-row-background-color: blue
+      foreground-color: $secondary-1,
+      data-color: $secondary-5,
+      header-height: 24px
     )
   );
 }

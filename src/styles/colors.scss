@@ -1,0 +1,80 @@
+$primary-1: #02AAB0;
+.text-primary-1 { color: $primary-1 }
+.bg-primary-1 { background: $primary-1 }
+
+$primary-2: #00828E;
+.text-primary-2 { color: $primary-2 }
+.bg-primary-2 { background: $primary-2 }
+
+$primary-3: #9BE1AB;
+.text-primary-3 { color: $primary-3 }
+.bg-primary-3 { background: $primary-3 }
+
+$primary-4: #18CBD1;
+.text-primary-4 { color: $primary-4 }
+.bg-primary-4 { background: $primary-4 }
+
+$secondary-1: #55597A;
+.text-secondary-1 { color: $secondary-1 }
+.bg-secondary-1 { background: $secondary-1 }
+
+$secondary-2: #33364C;
+.text-secondary-2 { color: $secondary-2 }
+.bg-secondary-2 { background: $secondary-2 }
+
+$secondary-3: #393F56;
+.text-secondary-3 { color: $secondary-3 }
+.bg-secondary-3 { background: $secondary-3 }
+
+$secondary-4: #ADA9B7;
+.text-secondary-4 { color: $secondary-4 }
+.bg-secondary-4 { background: $secondary-4 }
+
+$secondary-5: #303974;
+.text-secondary-5 { color: $secondary-5 }
+.bg-secondary-5 { background: $secondary-5 }
+
+$danger-1: #EB5757;
+.text-danger-1 { color: $danger-1 }
+.bg-danger-1 { background: $danger-1 }
+
+$danger-2: #DA5353;
+.text-danger-2 { color: $danger-2 }
+.bg-danger-2 { background: $danger-2 }
+
+$green-gradient: linear-gradient(280.79deg, #00828E -34.22%, #9BE1AB 194.17%);
+.text-green-gradient { background: $green-gradient; -webkit-background-clip: text; -webkit-text-fill-color: transparent }
+.bg-green-gradient { background: $green-gradient }
+
+$white-gradient: linear-gradient(180deg, #F5F4F7 0%, #FDFDFD 100%);
+.text-white-gradient { background: $white-gradient; -webkit-background-clip: text; -webkit-text-fill-color: transparent }
+.bg-white-gradient { background: $white-gradient }
+
+$dark-gradient: linear-gradient(174.38deg, #100F0F -3.36%, #383E56 95.64%);
+.text-dark-gradient { background: $dark-gradient; -webkit-background-clip: text; -webkit-text-fill-color: transparent }
+.bg-dark-gradient { background: $dark-gradient }
+
+$link-blue: #269AE4;
+.text-link-blue { color: $link-blue }
+.bg-link-blue { background: $link-blue }
+
+$white-1: #FFFFFF;
+.text-white-1 { color: $white-1 }
+.bg-white-1 { background: $white-1 }
+
+$white-2: #F8F9FE;
+.text-white-2 { color: $white-2 }
+.bg-white-2 { background: $white-2 }
+
+$white-3: #EBECEF;
+.text-white-3 { color: $white-3 }
+.bg-white-3 { background: $white-3 }
+
+$white-4: #EDEFF5;
+.text-white-4 { color: $white-4 }
+.bg-white-4 { background: $white-4 }
+
+$white-5: #D6D9E2;
+.text-white-5 { color: $white-5 }
+.bg-white-5 { background: $white-5 }
+
