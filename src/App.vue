@@ -8,7 +8,6 @@
 *,
 *:before,
 *:after {
-  position: relative;
   box-sizing: border-box;
 }
 
