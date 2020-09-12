@@ -68,6 +68,21 @@ $header-background-color: transparent; // Background colour for all headers, inc
   .ag-header-row-floating-filter {
     background: $white-2;
   }
+
+  .ag-body-viewport.ag-layout-normal {
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid rgba(0, 0, 0, 0);
+      border-top: none;
+      border-bottom: none;
+      background-clip: padding-box;
+      border-radius: 5px;
+      background-color: $secondary-1;
+    }
+  }
 }
 
 .ag-grid-vue {
