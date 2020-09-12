@@ -53,7 +53,8 @@ export default {
         { headerName: "PRICE", field: "price", type: "rightAligned" }
       ],
       defaultColDef: {
-        floatingFilter: true
+        floatingFilter: true,
+        resizable: false
       }
     };
     this.getAndSetRows();

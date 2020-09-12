@@ -96,6 +96,8 @@ $row-height: 51px;
   @include ag-theme-alpine(
     (
       data-color: $data-color,
+      foreground-color: $header-foreground-color,
+      secondary-foreground-color: $header-foreground-color,
       header-foreground-color: $header-foreground-color,
       header-background-color: $header-background-color,
       cell-horizontal-padding: $cell-horizontal-padding,
@@ -104,7 +106,11 @@ $row-height: 51px;
       input-border-color: $white-5,
       input-focus-border-color: $white-5,
       input-focus-box-shadow: none,
-      borders: false
+      borders: false,
+      header-column-resize-handle: true,
+      header-column-resize-handle-height: 100%,
+      header-column-resize-handle-width: 2px,
+      header-column-resize-handle-color: $white-5
     )
   );
 
