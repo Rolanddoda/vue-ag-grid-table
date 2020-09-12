@@ -19,18 +19,41 @@ export default {
   created() {
     this.options = {
       columnDefs: [
-        { headerName: "STATUS", field: "status" },
+        {
+          headerName: "STATUS",
+          field: "status",
+          type: "centerAligned",
+          width: 73,
+          minWidth: 73
+        },
         { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
         { headerName: "PUBLISHER", field: "publisher" },
         { headerName: "DEPARTMENT", field: "department" },
-        { headerName: "START DATE", field: "start_date" },
-        { headerName: "END_DATE", field: "end_date" },
-        { headerName: "LAST YEAR PRICE", field: "last_year_price" },
-        { headerName: "FORECASTED INCREASE", field: "forecasted_increase" },
-        { headerName: "FORECASTED PRICE", field: "forecasted_price" },
-        { headerName: "PRICE", field: "price" }
+        {
+          headerName: "START DATE",
+          field: "start_date",
+          type: "centerAligned"
+        },
+        { headerName: "END DATE", field: "end_date", type: "centerAligned" },
+        {
+          headerName: "LAST YEAR PRICE",
+          field: "last_year_price",
+          type: "rightAligned"
+        },
+        {
+          headerName: "FORECASTED INCREASE",
+          field: "forecasted_increase",
+          type: "rightAligned"
+        },
+        {
+          headerName: "FORECASTED PRICE",
+          field: "forecasted_price",
+          type: "rightAligned"
+        },
+        { headerName: "PRICE", field: "price", type: "rightAligned" }
       ],
       defaultColDef: {
+        type: "cellLeftAligned",
         floatingFilter: true,
         filter: "agTextColumnFilter",
         floatingFilterComponentParams: { suppressFilterButton: true }
