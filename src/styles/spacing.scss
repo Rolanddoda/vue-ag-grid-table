@@ -1,0 +1,75 @@
+/* For spacing we are gonna use Quasar's spacing --> https://quasar.dev/style/spacing */
+/*
+  However, our custom spacing doesn't fully match Quasar's spacing.
+  Specifically the XL and XXL variables. So whenever we need to use XL and XXL spacing
+  we have to use the following variables.
+*/
+
+/*
+ XS           S           M           L          XL          XXL         XXXL
+ 4px         8px         16px        24px       32px         48px        64px
+ */
+
+$space-xl: 32px;
+$space-xxl: 48px;
+$space-xxxl: 64px;
+
+/* Padding */
+
+.q-pa-xl { padding: $space-xl !important; }
+.q-pa-xxl { padding: $space-xxl !important; }
+.q-pa-xxxl { padding: $space-xxxl !important; }
+
+.q-pt-xl { padding-top: $space-xl !important; }
+.q-pt-xxl { padding-top: $space-xxl !important; }
+.q-pt-xxxl { padding-top: $space-xxxl !important; }
+
+.q-pr-xl { padding-right: $space-xl !important; }
+.q-pr-xxl { padding-right: $space-xxl !important; }
+.q-pr-xxxl { padding-right: $space-xxxl !important; }
+
+.q-pb-xl { padding-bottom: $space-xl !important; }
+.q-pb-xxl { padding-bottom: $space-xxl !important; }
+.q-pb-xxxl { padding-bottom: $space-xxxl !important; }
+
+.q-pl-xl { padding-left: $space-xl !important; }
+.q-pl-xxl { padding-left: $space-xxl !important; }
+.q-pl-xxxl { padding-left: $space-xxxl !important; }
+
+.q-px-xl { @extend .q-pl-xl; @extend .q-pr-xl }
+.q-px-xxl { @extend .q-pl-xxl; @extend .q-pr-xxl }
+.q-px-xxxl { @extend .q-pl-xxxl; @extend .q-pr-xxxl }
+
+.q-py-xl { @extend .q-pt-xl; @extend .q-pb-xl }
+.q-py-xxl { @extend .q-pt-xxl; @extend .q-pb-xxl }
+.q-py-xxxl { @extend .q-pt-xxxl; @extend .q-pb-xxxl }
+
+/* Margin */
+
+.q-ma-xl { margin: $space-xl !important; }
+.q-ma-xxl { margin: $space-xxl !important; }
+.q-ma-xxxl { margin: $space-xxxl !important; }
+
+.q-mt-xl { margin-top: $space-xl !important; }
+.q-mt-xxl { margin-top: $space-xxl !important; }
+.q-mt-xxxl { margin-top: $space-xxxl !important; }
+
+.q-mr-xl { margin-right: $space-xl !important; }
+.q-mr-xxl { margin-right: $space-xxl !important; }
+.q-mr-xxxl { margin-right: $space-xxxl !important; }
+
+.q-mb-xl { margin-bottom: $space-xl !important; }
+.q-mb-xxl { margin-bottom: $space-xxl !important; }
+.q-mb-xxxl { margin-bottom: $space-xxxl !important; }
+
+.q-ml-xl { margin-left: $space-xl !important; }
+.q-ml-xxl { margin-left: $space-xxl !important; }
+.q-ml-xxxl { margin-left: $space-xxxl !important; }
+
+.q-mx-xl { @extend .q-ml-xl; @extend .q-mr-xl }
+.q-mx-xxl { @extend .q-ml-xxl; @extend .q-mr-xxl }
+.q-mx-xxxl { @extend .q-ml-xxxl; @extend .q-mr-xxxl }
+
+.q-my-xl { @extend .q-mt-xl; @extend .q-mb-xl }
+.q-my-xxl { @extend .q-mt-xxl; @extend .q-mb-xxl }
+.q-my-xxxl { @extend .q-mt-xxxl; @extend .q-mb-xxxl }

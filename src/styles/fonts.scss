@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+@mixin font ($size, $line-height, $font-weight) {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+.text-caption-4 { @include font($size: 9px, $line-height: 14px, $font-weight: 300); }
+
+.text-caption-1 { @include font($size: 11px, $line-height: 18px, $font-weight: 300); }
+
+.text-heading-2 { @include font($size: 24px, $line-height: 32px, $font-weight: normal); }
+
+.text-body-4 { @include font($size: 11px, $line-height: 18px, $font-weight: normal); }
+
+.text-body-2 { @include font($size: 12px, $line-height: 20px, $font-weight: normal); }
+
+.text-subtitle-1 { @include font($size: 14px, $line-height: 22px, $font-weight: normal); }
+
+.text-subtitle-2 { @include font($size: 18px, $line-height: 32px, $font-weight: normal); }
+
+.text-caption-2 { @include font($size: 9px, $line-height: 14px, $font-weight: 600); }
+
+.text-body-3 { @include font($size: 11px, $line-height: 18px, $font-weight: 600); }
+
+.text-body-1 { @include font($size: 12px, $line-height: 20px, $font-weight: 600); }
+
+.text-heading-5 { @include font($size: 14px, $line-height: 22px, $font-weight: 600); }
+
+.text-button-small { @include font($size: 9px, $line-height: 14px, $font-weight: bold); text-transform: uppercase }
+
+.text-button-big { @include font($size: 11px, $line-height: 18px, $font-weight: bold); text-transform: uppercase; letter-spacing: 0.03em }
+
+.text-heading-6 { @include font($size: 12px, $line-height: 16px, $font-weight: bold); }
+
+.text-heading-4 { @include font($size: 14px, $line-height: 19px, $font-weight: bold); }
+
+.text-heading-3 { @include font($size: 18px, $line-height: 32px, $font-weight: bold); }
+
+.text-heading-1 { @include font($size: 36px, $line-height: 50px, $font-weight: bold); }
+
+.text-caption-3 {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
+}

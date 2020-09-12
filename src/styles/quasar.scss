@@ -1,0 +1,12 @@
+@import '~quasar/dist/quasar.css';
+@import 'colors';
+@import 'fonts';
+@import 'shadows';
+@import 'spacing';
+
+.border-radius-sm { border-radius: 4px; }
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
