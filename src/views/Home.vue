@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <AgGrid :options="options" />
+    <AgGrid :options="options" :row-data="rowData" />
   </Page>
 </template>
 
@@ -16,27 +16,25 @@ export default {
     rowData: null
   }),
 
-  computed: {
-    options() {
-      return {
-        columnDefs: [
-          { headerName: "STATUS", field: "status" },
-          { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
-          { headerName: "PUBLISHER", field: "publisher" },
-          { headerName: "DEPARTMENT", field: "department" },
-          { headerName: "START DATE", field: "start_date" },
-          { headerName: "END_DATE", field: "end_date" },
-          { headerName: "LAST YEAR PRICE", field: "last_year_price" },
-          { headerName: "FORECASTED INCREASE", field: "forecasted_increase" },
-          { headerName: "FORECASTED PRICE", field: "forecasted_price" },
-          { headerName: "PRICE", field: "price" }
-        ],
-        rowData: this.rowData
-      };
-    }
-  },
-
   created() {
+    this.options = {
+      columnDefs: [
+        { headerName: "STATUS", field: "status" },
+        { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
+        { headerName: "PUBLISHER", field: "publisher" },
+        { headerName: "DEPARTMENT", field: "department" },
+        { headerName: "START DATE", field: "start_date" },
+        { headerName: "END_DATE", field: "end_date" },
+        { headerName: "LAST YEAR PRICE", field: "last_year_price" },
+        { headerName: "FORECASTED INCREASE", field: "forecasted_increase" },
+        { headerName: "FORECASTED PRICE", field: "forecasted_price" },
+        { headerName: "PRICE", field: "price" }
+      ],
+      defaultColDef: {
+        floatingFilter: true,
+        filter: "agTextColumnFilter"
+      }
+    };
     this.getAndSetRows();
   },
 
