@@ -83,7 +83,7 @@ export default {
 @import "~ag-grid-enterprise/dist/styles/ag-grid.scss";
 @import "~ag-grid-enterprise/dist/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
 @import "~@/styles/colors";
-@import "~@/styles/fonts.scss";
+@import "~@/styles/fonts";
 
 $data-color: $secondary-5; // Color of text in grid cells
 $header-foreground-color: $grey-1; // Color of text and icons in the header
@@ -133,7 +133,12 @@ $row-height: 51px;
   }
 
   .ag-header-row-floating-filter {
+    $box-shadow-height: 2px;
     background: $white-2;
+    top: calc(
+      #{$header-height} - #{$box-shadow-height}
+    ) !important; // hack to show the box-shadow below
+    box-shadow: 0 #{$box-shadow-height} 6px rgba(71, 71, 71, 0.1);
   }
 
   .ag-body-viewport.ag-layout-normal {
