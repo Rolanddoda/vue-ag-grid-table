@@ -1,5 +1,5 @@
 <template>
-  <Page>
+  <Page class="q-pa-xl">
     <AgGrid ref="agGrid" :options="options" :row-data="rowData" />
   </Page>
 </template>

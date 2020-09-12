@@ -1,12 +1,16 @@
 <template>
-  <AgGridVue
-    floating-filters-height="68"
-    class="ag-grid-vue ag-theme-alpine"
-    :row-data="rowData"
-    v-bind="options"
-    @grid-ready="onGridReady"
-    @first-data-rendered="firstDataRendered"
-  ></AgGridVue>
+  <q-card class="full-height box-shadow-3">
+    <q-card-section class="full-height q-pa-md">
+      <AgGridVue
+        floating-filters-height="68"
+        class="ag-grid-vue ag-theme-alpine"
+        :row-data="rowData"
+        v-bind="options"
+        @grid-ready="onGridReady"
+        @first-data-rendered="firstDataRendered"
+      ></AgGridVue>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>
