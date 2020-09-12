@@ -1,5 +1,6 @@
 <template>
   <AgGridVue
+    floating-filters-height="68"
     class="ag-grid-vue ag-theme-alpine"
     :row-data="rowData"
     v-bind="options"
@@ -58,13 +59,19 @@ $header-background-color: transparent; // Background colour for all headers, inc
       data-color: $data-color,
       header-foreground-color: $header-foreground-color,
       header-background-color: $header-background-color,
-      header-height: 24px
+      cell-horizontal-padding: 8px,
+      header-height: 24px,
+      row-height: 51px
     )
   );
+
+  .ag-header-row-floating-filter {
+    background: $white-2;
+  }
 }
 
 .ag-grid-vue {
   height: 100%;
-  width: 100%;
+  width: 99.9%; // hack to get rid of the horizontal scroll
 }
 </style>

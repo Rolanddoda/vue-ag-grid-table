@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <AgGrid :options="options" :row-data="rowData" />
+    <AgGrid ref="agGrid" :options="options" :row-data="rowData" />
   </Page>
 </template>
 
@@ -32,7 +32,8 @@ export default {
       ],
       defaultColDef: {
         floatingFilter: true,
-        filter: "agTextColumnFilter"
+        filter: "agTextColumnFilter",
+        floatingFilterComponentParams: { suppressFilterButton: true }
       }
     };
     this.getAndSetRows();
