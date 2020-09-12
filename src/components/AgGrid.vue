@@ -5,7 +5,7 @@
         floating-filters-height="68"
         class="ag-grid-vue ag-theme-alpine"
         :row-data="rowData"
-        v-bind="{ ...options, ...genericOptions }"
+        v-bind="mergedOptions"
         @grid-ready="onGridReady"
         @first-data-rendered="firstDataRendered"
       ></AgGridVue>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { merge } from "lodash-es";
 import { AgGridVue } from "ag-grid-vue";
 import "ag-grid-enterprise";
 
@@ -31,8 +32,18 @@ export default {
   },
 
   computed: {
-    genericOptions() {
+    defaultOptions() {
       return {
+        defaultColDef: {
+          resizable: true,
+          sortable: true,
+          filter: "agTextColumnFilter",
+          type: "cellLeftAligned",
+          floatingFilterComponentParams: {
+            suppressFilterButton: true
+          }
+        },
+        suppressContextMenu: true,
         columnTypes: {
           centerAligned: {
             cellStyle: { textAlign: "center" },
@@ -43,6 +54,10 @@ export default {
           }
         }
       };
+    },
+
+    mergedOptions() {
+      return merge(this.defaultOptions, this.options);
     }
   },
 

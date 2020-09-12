@@ -53,10 +53,7 @@ export default {
         { headerName: "PRICE", field: "price", type: "rightAligned" }
       ],
       defaultColDef: {
-        type: "cellLeftAligned",
-        floatingFilter: true,
-        filter: "agTextColumnFilter",
-        floatingFilterComponentParams: { suppressFilterButton: true }
+        floatingFilter: true
       }
     };
     this.getAndSetRows();
