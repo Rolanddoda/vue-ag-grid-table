@@ -41,7 +41,8 @@ export default {
           type: "cellLeftAligned",
           floatingFilterComponentParams: {
             suppressFilterButton: true
-          }
+          },
+          menuTabs: ["generalMenuTab", "columnsMenuTab"]
         },
         suppressContextMenu: true,
         columnTypes: {
@@ -119,19 +120,6 @@ $row-height: 51px;
     line-height: $header-height;
   }
 
-  .ag-row {
-    border-bottom: 1px solid $white-4;
-  }
-
-  .ag-header-cell.text-center .ag-header-cell-label {
-    justify-content: center;
-  }
-
-  .ag-row .ag-cell {
-    @extend .text-body-4;
-    line-height: $row-height;
-  }
-
   .ag-header-row-floating-filter {
     $box-shadow-height: 2px;
     background: $white-2;
@@ -145,6 +133,32 @@ $row-height: 51px;
     }
   }
 
+  .ag-header-cell.text-center .ag-header-cell-label {
+    justify-content: center;
+  }
+
+  .ag-row {
+    border-bottom: 1px solid $white-4;
+  }
+
+  .ag-row .ag-cell {
+    @extend .text-body-4;
+    line-height: $row-height;
+  }
+
+  .ag-cell {
+    //width: 20px;
+    //height: 20px;
+    //background: #35d0ba;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //border-radius: 50%;
+    //color: white;
+    //font-weight: 900;
+  }
+
+  // Table Scrollbar
   .ag-body-viewport.ag-layout-normal {
     &::-webkit-scrollbar {
       width: 8px;
