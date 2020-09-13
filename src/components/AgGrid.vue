@@ -52,6 +52,14 @@ export default {
           },
           cellLeftAligned: {
             cellStyle: { textAlign: "left" }
+          },
+          statusColumn: {
+            cellClass: ["status-column"],
+            type: "centerAligned",
+            width: 73,
+            minWidth: 73,
+            cellRenderer: params =>
+              `<div class="status-col-badge">${params.value}</div>`
           }
         }
       };
@@ -146,16 +154,25 @@ $row-height: 51px;
     line-height: $row-height;
   }
 
-  .ag-cell {
-    //width: 20px;
-    //height: 20px;
-    //background: #35d0ba;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    //border-radius: 50%;
-    //color: white;
-    //font-weight: 900;
+  .ag-cell.status-column {
+    > span {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+
+      > .status-col-badge {
+        width: 18px;
+        height: 18px;
+        background: #35d0ba;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: $white-1;
+        @extend .text-button-big;
+      }
+    }
   }
 
   // Table Scrollbar

@@ -22,9 +22,7 @@ export default {
         {
           headerName: "STATUS",
           field: "status",
-          type: "centerAligned",
-          width: 73,
-          minWidth: 73
+          type: "statusColumn"
         },
         { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
         { headerName: "PUBLISHER", field: "publisher" },
