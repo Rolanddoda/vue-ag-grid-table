@@ -139,6 +139,10 @@ $row-height: 51px;
       #{$header-height} - #{$box-shadow-height}
     ) !important; // hack to show the box-shadow below
     box-shadow: 0 #{$box-shadow-height} 6px rgba(71, 71, 71, 0.1);
+
+    .ag-input-field-input {
+      height: 36px;
+    }
   }
 
   .ag-body-viewport.ag-layout-normal {

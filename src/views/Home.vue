@@ -74,7 +74,7 @@ export default {
     },
 
     getData() {
-      return Array.from({ length: 10 }, nr => ({
+      return Array.from({ length: 20 }, nr => ({
         id: nr + 1,
         status: "A",
         subscriptions: "The international",
