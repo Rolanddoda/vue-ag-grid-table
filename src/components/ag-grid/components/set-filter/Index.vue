@@ -16,10 +16,10 @@
       </template>
 
       <template #selected>
-        <span class="text-caption-3" v-if="model.value">
-          Filtered
+        <span class="text-caption-3" v-if="areAllOptionsSelected">
+          All selected
         </span>
-        <span class="text-caption-3" v-else>All</span>
+        <span class="text-caption-3" v-else>{{ model.length }} selected</span>
       </template>
 
       <template #no-option>
