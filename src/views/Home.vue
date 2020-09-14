@@ -31,6 +31,8 @@ export default {
           field: "department",
           filter: "agSetColumnFilter",
           headerClass: "hack-filter",
+          minWidth: 150,
+          width: 150,
           floatingFilterComponentFramework: "SetFilter",
           filterParams: {
             suppressSelectAll: true

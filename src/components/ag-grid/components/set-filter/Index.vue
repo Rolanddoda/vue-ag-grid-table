@@ -16,9 +16,13 @@
       </template>
 
       <template #selected>
-        <span class="text-caption-3" v-if="areAllOptionsSelected">
+        <span
+          class="text-caption-3"
+          v-if="areAllOptionsSelected || model[0] === null"
+        >
           All selected
         </span>
+
         <span class="text-caption-3" v-else>{{ model.length }} selected</span>
       </template>
 
@@ -72,7 +76,7 @@ export default {
 
   data: () => ({
     options: [],
-    model: []
+    model: [null]
   }),
 
   computed: {
@@ -89,7 +93,7 @@ export default {
     onPopUpShow() {
       const instance = this.getFilterInstance();
       this.options = instance.getValues();
-      if (!this.model.length) this.model = instance.getValues();
+      if (this.model[0] === null) this.model = instance.getValues();
     },
 
     getFilterInstance() {
