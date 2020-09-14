@@ -17,7 +17,7 @@
 import { merge } from "lodash-es";
 import { AgGridVue } from "ag-grid-vue";
 import "ag-grid-enterprise";
-import StatusColFilter from "./components/StatusColFilter";
+import StatusColFilter from "./components/status-col-filter/Index";
 
 export default {
   components: {

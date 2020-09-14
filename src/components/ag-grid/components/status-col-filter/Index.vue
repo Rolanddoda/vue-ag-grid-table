@@ -8,32 +8,18 @@
     @input="valueChanged"
   >
     <template #selected>
-      <q-avatar
-        v-if="model.value"
-        size="20px"
-        :style="{ background: model.color }"
-        text-color="white"
-      >
-        {{ model.value }}
-      </q-avatar>
-
+      <Avatar v-if="model.value" :color="model.color" :value="model.value" />
       <span v-else>All</span>
     </template>
 
-    <template #option="scope">
-      <q-item v-bind="scope.itemProps" v-on="scope.itemEvents">
+    <template #option="{itemProps, itemEvents, opt}">
+      <q-item v-bind="itemProps" v-on="itemEvents">
         <q-item-section>
-          <q-item-label caption>{{ scope.opt.label }}</q-item-label>
+          <q-item-label caption>{{ opt.label }}</q-item-label>
         </q-item-section>
 
-        <q-item-section v-if="scope.opt.value" avatar>
-          <q-avatar
-            size="20px"
-            :style="{ background: scope.opt.color }"
-            text-color="white"
-          >
-            {{ scope.opt.value }}
-          </q-avatar>
+        <q-item-section v-if="opt.value" avatar>
+          <Avatar :color="opt.color" :value="opt.value" />
         </q-item-section>
       </q-item>
     </template>
@@ -41,7 +27,15 @@
 </template>
 
 <script>
+import Avatar from "./components/Avatar";
+
 export default {
+  name: "StatusColFilter",
+
+  components: {
+    Avatar
+  },
+
   data: function() {
     return {
       model: { label: "All", value: null },
@@ -62,9 +56,6 @@ export default {
     },
 
     onParentModelChanged(parentModel) {
-      console.log("CALLEd", parentModel);
-      // note that the filter could be anything here, but our purposes we're assuming a greater than filter only,
-      // so just read off the value and use that
       if (!parentModel) this.model = { label: "All", value: null };
       else this.model.value = parentModel.filter;
     }
