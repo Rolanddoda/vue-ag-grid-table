@@ -8,7 +8,7 @@
       hide-dropdown-icon
       outlined
       bg-color="white"
-      @input="valueChanged"
+      @input="applyFilter"
       @popup-show="onPopUpShow"
     >
       <template #append>
@@ -22,15 +22,41 @@
         <span class="text-caption-3" v-else>All</span>
       </template>
 
-      <template #option="{itemProps, itemEvents, opt}">
-        <q-item v-bind="itemProps" v-on="itemEvents">
+      <template #no-option>
+        <q-item>
+          <q-item-section class="text-italic text-grey">
+            No options
+          </q-item-section>
+        </q-item>
+      </template>
+
+      <template #before-options>
+        <q-item clickable>
           <q-item-section side>
-            <q-checkbox dense v-model="model" :val="opt.value" />
+            <q-checkbox
+              dense
+              :value="model.length === options.length"
+              :val="null"
+            />
           </q-item-section>
 
           <q-item-section>
             <q-item-label class="text-caption-3" caption>
-              {{ opt.label }}
+              All
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+      </template>
+
+      <template #option="{itemProps, itemEvents, opt}">
+        <q-item v-bind="itemProps" v-on="itemEvents">
+          <q-item-section side>
+            <q-checkbox dense :value="model" :val="opt" @input="applyFilter" />
+          </q-item-section>
+
+          <q-item-section>
+            <q-item-label class="text-caption-3" caption>
+              {{ opt }}
             </q-item-label>
           </q-item-section>
         </q-item>
@@ -44,8 +70,8 @@ export default {
   name: "SetFilter",
 
   data: () => ({
-    options: [{ label: "All", value: null }],
-    model: [{ label: "All", value: null }]
+    options: [],
+    model: []
   }),
 
   computed: {
@@ -57,17 +83,8 @@ export default {
   methods: {
     onPopUpShow() {
       const instance = this.getFilterInstance();
-      const values = instance.getValues();
-      const mappedValues = values.map(val => ({ label: val, value: val }));
-      this.options = [{ label: "All", value: null }, ...mappedValues];
-    },
-
-    valueChanged(newValues) {
-      if (!newValues.length) this.applyFilter(null);
-      else {
-        const values = newValues.filter(val => val.value !== null);
-        this.applyFilter(values.map(val => val.value));
-      }
+      this.options = instance.getValues();
+      if (!this.model.length) this.model = instance.getValues();
     },
 
     getFilterInstance() {
@@ -75,19 +92,15 @@ export default {
     },
 
     applyFilter(values) {
+      console.log({ values });
       const model = values ? { values } : null;
       const instance = this.getFilterInstance();
       instance.setModel(model);
       this.params.api.onFilterChanged();
-      // const instance = this.getFilterInstance();
-      // instance.setFilterValues(values);
-      // instance.applyModel();
-      // this.params.api.onFilterChanged();
     },
 
     onParentModelChanged(parentModel) {
-      console.log(parentModel);
-      if (!parentModel) this.model = { label: "All", value: null };
+      if (!parentModel) this.model = this.options.slice();
       else this.model = parentModel.values;
     }
   }
