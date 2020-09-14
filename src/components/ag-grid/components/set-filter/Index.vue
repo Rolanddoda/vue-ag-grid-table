@@ -31,12 +31,13 @@
       </template>
 
       <template #before-options>
-        <q-item clickable>
+        <q-item clickable @click="handleAllOptionClick">
           <q-item-section side>
             <q-checkbox
               dense
-              :value="model.length === options.length"
+              :value="areAllOptionsSelected"
               :val="null"
+              @click="handleAllOptionClick"
             />
           </q-item-section>
 
@@ -77,6 +78,10 @@ export default {
   computed: {
     colId() {
       return this.params.column.colId;
+    },
+
+    areAllOptionsSelected() {
+      return this.model.length === this.options.length;
     }
   },
 
@@ -91,8 +96,12 @@ export default {
       return this.params.api.getFilterInstance(this.colId);
     },
 
+    handleAllOptionClick() {
+      if (this.areAllOptionsSelected) this.applyFilter([]);
+      else this.applyFilter(null);
+    },
+
     applyFilter(values) {
-      console.log({ values });
       const model = values ? { values } : null;
       const instance = this.getFilterInstance();
       instance.setModel(model);
