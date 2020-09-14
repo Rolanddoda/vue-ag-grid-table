@@ -18,12 +18,15 @@ import { merge } from "lodash-es";
 import { AgGridVue } from "ag-grid-vue";
 import "ag-grid-enterprise";
 import StatusColFilter from "./components/status-col-filter/Index";
+import SetFilter from "./components/set-filter/Index";
 
 export default {
   components: {
     AgGridVue,
     // eslint-disable-next-line vue/no-unused-components
-    StatusColFilter
+    StatusColFilter,
+    // eslint-disable-next-line vue/no-unused-components
+    SetFilter
   },
 
   props: {
@@ -38,7 +41,8 @@ export default {
     defaultOptions() {
       return {
         frameworkComponents: {
-          StatusColFilter
+          StatusColFilter,
+          SetFilter
         },
         defaultColDef: {
           resizable: true,
@@ -132,6 +136,8 @@ $row-height: 51px;
     )
   );
 
+  /* ========================= STARTS Header styling ========================= */
+
   .ag-header-row:first-child {
     @extend .text-caption-2;
     line-height: $header-height;
@@ -146,7 +152,7 @@ $row-height: 51px;
     box-shadow: 0 #{$box-shadow-height} 6px rgba(71, 71, 71, 0.1);
 
     .ag-input-field-input {
-      height: 36px;
+      height: var(--filter-height);
     }
   }
 
@@ -154,9 +160,13 @@ $row-height: 51px;
     justify-content: center;
   }
 
+  /* ========================= ENDS Header styling ========================= */
+
   .ag-row {
     border-bottom: 1px solid $white-4;
   }
+
+  /* ========================= STARTS cell styling ========================= */
 
   .ag-row .ag-cell {
     @extend .text-body-4;
@@ -184,7 +194,9 @@ $row-height: 51px;
     }
   }
 
-  // Table Scrollbar
+  /* ========================= ENDS cell styling ========================= */
+
+  /* ========================= STARTS Table Scrollbar styling ========================= */
   .ag-body-viewport.ag-layout-normal {
     &::-webkit-scrollbar {
       width: 8px;
@@ -199,6 +211,8 @@ $row-height: 51px;
       background-color: $secondary-1;
     }
   }
+
+  /* ========================= ENDS Table Scrollbar styling ========================= */
 }
 
 .ag-grid-vue {

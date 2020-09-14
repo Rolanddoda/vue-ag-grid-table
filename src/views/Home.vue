@@ -26,7 +26,16 @@ export default {
         },
         { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
         { headerName: "PUBLISHER", field: "publisher" },
-        { headerName: "DEPARTMENT", field: "department" },
+        {
+          headerName: "DEPARTMENT",
+          field: "department",
+          filter: "agSetColumnFilter",
+          headerClass: "hack-filter",
+          floatingFilterComponentFramework: "SetFilter",
+          filterParams: {
+            suppressSelectAll: true
+          }
+        },
         {
           headerName: "START DATE",
           field: "start_date",
@@ -71,13 +80,19 @@ export default {
       });
     },
 
+    getDepartment() {
+      const deps = ["Main", "Secondary", "Another", "Last"];
+      const random = Math.floor(Math.random() * 4);
+      return deps[random];
+    },
+
     getData() {
       return Array.from({ length: 20 }, nr => ({
         id: nr + 1,
         status: "A",
         subscriptions: "The international",
         publisher: "Cambridge University",
-        department: "Main",
+        department: this.getDepartment(),
         start_date: "01/01/2021",
         end_date: "031/012/2021",
         last_year_price: "$100,000",
