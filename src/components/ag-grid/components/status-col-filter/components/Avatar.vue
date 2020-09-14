@@ -1,6 +1,6 @@
 <template>
   <q-avatar size="20px" :style="{ background: color }" text-color="white">
-    {{ value }}
+    <span class="text-button-big"> {{ value }}</span>
   </q-avatar>
 </template>
 

@@ -61,8 +61,8 @@ export default {
           },
           statusColumn: {
             cellClass: ["status-column"],
-            width: 100,
-            minWidth: 100,
+            width: 85,
+            minWidth: 85,
             cellRenderer: params =>
               `<div class="status-col-badge">${params.value}</div>`,
             filter: "agTextColumnFilter",
@@ -109,6 +109,8 @@ $header-height: 24px;
 $row-height: 51px;
 
 .ag-theme-alpine {
+  --filter-height: 36px;
+
   @include ag-theme-alpine(
     (
       data-color: $data-color,

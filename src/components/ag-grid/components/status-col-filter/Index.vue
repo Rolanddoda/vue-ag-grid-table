@@ -1,29 +1,36 @@
 <template>
-  <q-select
-    :value="model"
-    dense
-    outlined
-    class="full-width"
-    :options="options"
-    @input="valueChanged"
-  >
-    <template #selected>
-      <Avatar v-if="model.value" :color="model.color" :value="model.value" />
-      <span v-else>All</span>
-    </template>
+  <div class="status-col-filter">
+    <q-select
+      :value="model"
+      :options="options"
+      class="full-width"
+      dense
+      hide-dropdown-icon
+      outlined
+      @input="valueChanged"
+    >
+      <template #append>
+        <q-icon size="18px" name="keyboard_arrow_down"></q-icon>
+      </template>
 
-    <template #option="{itemProps, itemEvents, opt}">
-      <q-item v-bind="itemProps" v-on="itemEvents">
-        <q-item-section>
-          <q-item-label caption>{{ opt.label }}</q-item-label>
-        </q-item-section>
+      <template #selected>
+        <Avatar v-if="model.value" :color="model.color" :value="model.value" />
+        <span class="text-caption-3" v-else>All</span>
+      </template>
 
-        <q-item-section v-if="opt.value" avatar>
-          <Avatar :color="opt.color" :value="opt.value" />
-        </q-item-section>
-      </q-item>
-    </template>
-  </q-select>
+      <template #option="{itemProps, itemEvents, opt}">
+        <q-item v-bind="itemProps" v-on="itemEvents">
+          <q-item-section>
+            <q-item-label caption>{{ opt.label }}</q-item-label>
+          </q-item-section>
+
+          <q-item-section v-if="opt.value" avatar>
+            <Avatar :color="opt.color" :value="opt.value" />
+          </q-item-section>
+        </q-item>
+      </template>
+    </q-select>
+  </div>
 </template>
 
 <script>
@@ -62,3 +69,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.status-col-filter {
+  ::v-deep .q-field__control {
+    height: var(--filter-height);
+    min-height: var(--filter-height) !important;
+  }
+}
+</style>
