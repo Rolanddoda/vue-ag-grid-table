@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AgGrid from "@/components/AgGrid";
+import AgGrid from "@/components/ag-grid/AgGrid";
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
         {
           headerName: "STATUS",
           field: "status",
-          type: "statusColumn"
+          type: ["statusColumn", "centerAligned"]
         },
         { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
         { headerName: "PUBLISHER", field: "publisher" },

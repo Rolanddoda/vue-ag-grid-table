@@ -17,10 +17,13 @@
 import { merge } from "lodash-es";
 import { AgGridVue } from "ag-grid-vue";
 import "ag-grid-enterprise";
+import StatusColFilter from "./components/StatusColFilter";
 
 export default {
   components: {
-    AgGridVue
+    AgGridVue,
+    // eslint-disable-next-line vue/no-unused-components
+    StatusColFilter
   },
 
   props: {
@@ -34,6 +37,9 @@ export default {
   computed: {
     defaultOptions() {
       return {
+        frameworkComponents: {
+          StatusColFilter
+        },
         defaultColDef: {
           resizable: true,
           sortable: true,
@@ -55,11 +61,12 @@ export default {
           },
           statusColumn: {
             cellClass: ["status-column"],
-            type: "centerAligned",
-            width: 73,
-            minWidth: 73,
+            width: 100,
+            minWidth: 100,
             cellRenderer: params =>
-              `<div class="status-col-badge">${params.value}</div>`
+              `<div class="status-col-badge">${params.value}</div>`,
+            filter: "agTextColumnFilter",
+            floatingFilterComponentFramework: "StatusColFilter"
           }
         }
       };
