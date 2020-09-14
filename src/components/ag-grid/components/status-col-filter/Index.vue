@@ -4,6 +4,7 @@
       :value="model"
       :options="options"
       class="full-width"
+      bg-color="white"
       dense
       hide-dropdown-icon
       outlined
@@ -21,7 +22,9 @@
       <template #option="{itemProps, itemEvents, opt}">
         <q-item v-bind="itemProps" v-on="itemEvents">
           <q-item-section>
-            <q-item-label caption>{{ opt.label }}</q-item-label>
+            <q-item-label class="text-caption-3" caption>
+              {{ opt.label }}
+            </q-item-label>
           </q-item-section>
 
           <q-item-section v-if="opt.value" avatar>
@@ -47,10 +50,10 @@ export default {
     return {
       model: { label: "All", value: null },
       options: [
+        { label: "All", value: null },
         { label: "Accepted", value: "A", color: "#65b5a5" },
         { label: "Cancelled", value: "C", color: "#4f829e" },
-        { label: "Pending", value: "P", color: "#DD9787" },
-        { label: "All", value: null }
+        { label: "Pending", value: "P", color: "#DD9787" }
       ]
     };
   },
