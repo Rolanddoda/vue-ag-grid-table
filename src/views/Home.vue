@@ -24,7 +24,14 @@ export default {
           field: "status",
           type: ["statusColumn", "centerAligned"]
         },
-        { headerName: "SUBSCRIPTIONS", field: "subscriptions" },
+        {
+          headerName: "SUBSCRIPTIONS",
+          field: "subscriptions",
+          minWidth: 110,
+          width: 110,
+          filter: "agTextColumnFilter",
+          floatingFilterComponentFramework: "TextFilter"
+        },
         { headerName: "PUBLISHER", field: "publisher" },
         {
           headerName: "DEPARTMENT",

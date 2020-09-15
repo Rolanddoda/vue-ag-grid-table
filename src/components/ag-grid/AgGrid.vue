@@ -22,6 +22,7 @@ import "ag-grid-enterprise";
 // Ag grid components
 import StatusColFilter from "./components/status-col-filter/Index";
 import SetFilter from "./components/set-filter/Index";
+import TextFilter from "./components/text-filter/Index";
 
 export default {
   components: {
@@ -29,7 +30,9 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     StatusColFilter,
     // eslint-disable-next-line vue/no-unused-components
-    SetFilter
+    SetFilter,
+    // eslint-disable-next-line vue/no-unused-components
+    TextFilter
   },
 
   props: {

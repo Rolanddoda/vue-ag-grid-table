@@ -15,7 +15,8 @@ import {
   QItemSection,
   QItemLabel,
   QAvatar,
-  QCheckbox
+  QCheckbox,
+  QInput
 } from "quasar";
 
 Vue.use(Quasar, {
@@ -30,7 +31,8 @@ Vue.use(Quasar, {
     QItemSection,
     QItemLabel,
     QAvatar,
-    QCheckbox
+    QCheckbox,
+    QInput
   },
   directives: {},
   plugins: {}
