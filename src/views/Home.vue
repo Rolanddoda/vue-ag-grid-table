@@ -27,12 +27,13 @@ export default {
         {
           headerName: "SUBSCRIPTIONS",
           field: "subscriptions",
-          minWidth: 110,
-          width: 110,
-          filter: "agTextColumnFilter",
-          floatingFilterComponentFramework: "TextFilter"
+          type: ["textFilterColumn"]
         },
-        { headerName: "PUBLISHER", field: "publisher" },
+        {
+          headerName: "PUBLISHER",
+          field: "publisher",
+          type: ["textFilterColumn"]
+        },
         {
           headerName: "DEPARTMENT",
           field: "department",
@@ -84,15 +85,21 @@ export default {
 
     getDepartment() {
       const deps = ["Main", "Secondary", "Another", "Last"];
-      const random = Math.floor(Math.random() * 4);
+      const random = Math.floor(Math.random() * deps.length);
       return deps[random];
+    },
+
+    getSubscription() {
+      const subs = ["First", "Second", "Third", "Fourth", "Fifth"];
+      const random = Math.floor(Math.random() * subs.length);
+      return subs[random];
     },
 
     getData() {
       return Array.from({ length: 20 }, nr => ({
         id: nr + 1,
         status: "A",
-        subscriptions: "The international",
+        subscriptions: this.getSubscription(),
         publisher: "Cambridge University",
         department: this.getDepartment(),
         start_date: "01/01/2021",

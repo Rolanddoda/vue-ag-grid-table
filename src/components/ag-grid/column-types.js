@@ -17,12 +17,19 @@ export const columnTypes = {
   },
 
   setFilterColumn: {
-    filter: "agSetColumnFilter",
     minWidth: 150,
     width: 150,
+    filter: "agSetColumnFilter",
     floatingFilterComponentFramework: "SetFilter",
     filterParams: {
       suppressSelectAll: true
     }
+  },
+
+  textFilterColumn: {
+    minWidth: 110,
+    width: 110,
+    filter: "agTextColumnFilter",
+    floatingFilterComponentFramework: "TextFilter"
   }
 };
