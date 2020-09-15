@@ -14,9 +14,12 @@
 </template>
 
 <script>
+import { columnTypes } from "./column-types";
+// Libraries
 import { merge } from "lodash-es";
 import { AgGridVue } from "ag-grid-vue";
 import "ag-grid-enterprise";
+// Ag grid components
 import StatusColFilter from "./components/status-col-filter/Index";
 import SetFilter from "./components/set-filter/Index";
 
@@ -52,27 +55,12 @@ export default {
           floatingFilterComponentParams: {
             suppressFilterButton: true
           },
-          menuTabs: ["generalMenuTab", "columnsMenuTab"]
+          menuTabs: ["generalMenuTab", "columnsMenuTab"],
+          width: 85,
+          minWidth: 85
         },
         suppressContextMenu: true,
-        columnTypes: {
-          centerAligned: {
-            cellStyle: { textAlign: "center" },
-            headerClass: ["text-center"]
-          },
-          cellLeftAligned: {
-            cellStyle: { textAlign: "left" }
-          },
-          statusColumn: {
-            cellClass: ["status-column"],
-            width: 85,
-            minWidth: 85,
-            cellRenderer: params =>
-              `<div class="status-col-badge">${params.value}</div>`,
-            filter: "agTextColumnFilter",
-            floatingFilterComponentFramework: "StatusColFilter"
-          }
-        }
+        columnTypes
       };
     },
 
